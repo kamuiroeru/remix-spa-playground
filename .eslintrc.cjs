@@ -80,5 +80,11 @@ module.exports = {
         node: true,
       },
     },
+
+    // Storybook
+    {
+      files: ['*.stories.{js,jsx,ts,tsx}'],
+      extends: ['plugin:storybook/recommended'],
+    },
   ],
 };
