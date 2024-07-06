@@ -1,4 +1,6 @@
 import type { MetaFunction } from '@remix-run/node';
+import { Button } from '@/components/ui/Button';
+import { Icon } from '@iconify/react';
 
 export const meta: MetaFunction = () => {
   return [
@@ -31,6 +33,26 @@ export default function Index() {
           >
             Remix Docs
           </a>
+        </li>
+        <li className="flex flex-row gap-4">
+          <Button
+            text="Normal Button"
+            type="normal"
+            color="green"
+            leadingIcon={<Icon icon="teenyicons:button-outline" />}
+          />
+          <Button
+            text="Outline Button"
+            type="outline"
+            color="green"
+            leadingIcon={<Icon icon="material-symbols:star" />}
+          />
+          <Button
+            text="Text Button"
+            type="text"
+            color="green"
+            leadingIcon={<Icon icon="solar:text-bold" />}
+          />
         </li>
       </ul>
     </div>
