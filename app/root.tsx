@@ -8,6 +8,7 @@ import {
 import './tailwind.css';
 import { useState } from 'react';
 import { clsx } from 'clsx/lite';
+import { LightDarkSwitch } from './components/ui/LightDarkSwitch';
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -28,15 +29,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
       >
         <header className="flex w-full min-w-[1024px] items-center gap-5 bg-blue-500 p-4 text-white">
           <p className="text-3xl">Remix App</p>
-          <div>
-            <label htmlFor="darkMode">Dark Mode</label>
-            <input
-              type="checkbox"
-              id="darkMode"
-              checked={isDarkMode}
-              onChange={() => setIsDarkMode(!isDarkMode)}
-            />
-          </div>
+          <LightDarkSwitch
+            defaultChecked={isDarkMode}
+            onChange={setIsDarkMode}
+          />
         </header>
         <main className="flex-1 bg-gray-50 dark:bg-gray-800">{children}</main>
         <ScrollRestoration />

@@ -2,7 +2,9 @@
   "include": [
     "env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx",
   ],
   "compilerOptions": {
     "lib": [
