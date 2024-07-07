@@ -1,25 +1,34 @@
 import { clsx } from 'clsx/lite';
 
-type ButtonType = 'normal' | 'outline' | 'text';
-type ButtonColor =
-  | 'red'
-  | 'orange'
-  | 'yellow'
-  | 'green'
-  | 'blue'
-  | 'indigo'
-  | 'purple'
-  | 'pink';
+export const buttonTypes = ['normal', 'outline', 'text'] as const;
+type ButtonType = (typeof buttonTypes)[number];
+
+export const buttonColors = [
+  'red',
+  'orange',
+  'yellow',
+  'green',
+  'blue',
+  'indigo',
+  'purple',
+  'pink',
+] as const;
+type ButtonColor = (typeof buttonColors)[number];
 
 const color2TwBgClass: Record<ButtonColor, string> = {
-  red: 'bg-red-500 hover:bg-red-600',
-  orange: 'bg-orange-500 hover:bg-orange-600',
-  yellow: 'bg-yellow-500 hover:bg-yellow-600',
-  green: 'bg-green-500 hover:bg-green-600',
-  blue: 'bg-blue-500 hover:bg-blue-600',
-  indigo: 'bg-indigo-500 hover:bg-indigo-600',
-  purple: 'bg-purple-500 hover:bg-purple-600',
-  pink: 'bg-pink-500 hover:bg-pink-600',
+  red: 'bg-red-500 hover:bg-red-600 dark:bg-red-400 dark:hover:bg-red-300',
+  orange:
+    'bg-orange-500 hover:bg-orange-600 dark:bg-orange-400 dark:hover:bg-orange-300',
+  yellow:
+    'bg-yellow-500 hover:bg-yellow-600 dark:bg-yellow-400 dark:hover:bg-yellow-300',
+  green:
+    'bg-green-500 hover:bg-green-600 dark:bg-green-400 dark:hover:bg-green-300',
+  blue: 'bg-blue-500 hover:bg-blue-600 dark:bg-blue-400 dark:hover:bg-blue-300',
+  indigo:
+    'bg-indigo-500 hover:bg-indigo-600 dark:bg-indigo-400 dark:hover:bg-indigo-300',
+  purple:
+    'bg-purple-500 hover:bg-purple-600 dark:bg-purple-400 dark:hover:bg-purple-300',
+  pink: 'bg-pink-500 hover:bg-pink-600 dark:bg-pink-400 dark:hover:bg-pink-300',
 };
 
 const color2TwBorderClass: Record<ButtonColor, string> = {
@@ -56,7 +65,6 @@ export const Presentation = ({
   type = 'normal',
   color = 'blue',
   leadingIcon,
-  ...buttonProps
 }: Props) => (
   <button
     className={clsx(
@@ -65,6 +73,7 @@ export const Presentation = ({
       type === 'outline' &&
         clsx(
           color2TwBorderClass[color],
+          color2TwTextClass[color],
           'border-2',
           'bg-white hover:bg-gray-100',
         ),
