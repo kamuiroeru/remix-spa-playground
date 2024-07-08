@@ -61,6 +61,9 @@ export default function Index() {
         <li>
           <Link to={`/about?slug=${Math.random()}`}>UnVisited Link</Link>
         </li>
+        <li>
+          <Link to="/about/hogefuga">about/hogefuga</Link>
+        </li>
       </ul>
     </section>
   );
