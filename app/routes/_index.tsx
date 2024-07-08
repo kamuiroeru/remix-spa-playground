@@ -56,10 +56,10 @@ export default function Index() {
           />
         </li>
         <li>
-          <Link to="https://example.com">about</Link>
+          <Link to="/about">about</Link>
         </li>
         <li>
-          <Link to="/hogefugapyo">hogefugapyo</Link>
+          <Link to={`/about?slug=${Math.random()}`}>UnVisited Link</Link>
         </li>
       </ul>
     </section>
