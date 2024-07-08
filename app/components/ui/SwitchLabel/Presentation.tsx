@@ -1,7 +1,6 @@
 import { useId } from 'react';
 import { BasicColor } from '@/schema/color';
 import { Switch } from '@/components/ui/Switch';
-import { Label } from '../Label';
 
 type Props = {
   checked: boolean;
@@ -20,9 +19,9 @@ export const Presentation = ({
   return (
     <div className="flex flex-row items-center gap-2">
       <Switch checked={checked} onColor={onColor} onChange={onChange} id={id} />
-      <Label htmlFor={id} className="cursor-pointer">
+      <label htmlFor={id} className="cursor-pointer">
         {label}
-      </Label>
+      </label>
     </div>
   );
 };
