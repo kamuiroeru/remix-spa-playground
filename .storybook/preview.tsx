@@ -23,7 +23,7 @@ const LightDarkTheme: Decorator = (Story) => {
 
   return (
     <div className={clsx('flex flex-col gap-2', isDarkMode ? 'dark' : '')}>
-      <LightDarkSwitch defaultChecked={isDarkMode} onChange={setIsDarkMode} />
+      <LightDarkSwitch checked={isDarkMode} onChange={setIsDarkMode} />
       <main className="w-[1440px] min-w-[1024px] flex-1 bg-gray-50 p-4 dark:bg-gray-800">
         <Story />
       </main>

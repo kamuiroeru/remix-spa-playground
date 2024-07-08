@@ -1,17 +1,23 @@
+import { useState } from 'react';
 import { Presentation } from './Presentation';
 import type { Meta, StoryObj } from '@storybook/react';
 
-type Story = StoryObj<typeof Presentation>;
+const PresentationMock = () => {
+  const [checked, setChecked] = useState(false);
+  const onChange = (checked: boolean) => {
+    console.log('checked:', checked);
+    setChecked(checked);
+  };
+  return <Presentation checked={checked} onChange={onChange} />;
+};
+
+type Story = StoryObj<typeof PresentationMock>;
 
 export const Default: Story = {
-  args: {
-    onChange: (checked) => {
-      console.log('checked:', checked);
-    },
-  },
+  args: {},
 };
 
 export default {
   title: 'ui/LightDarkSwitch',
-  component: (props) => <Presentation {...props} />,
-} satisfies Meta<typeof Presentation>;
+  component: () => <PresentationMock />,
+} satisfies Meta<typeof PresentationMock>;
