@@ -1,6 +1,7 @@
 import type { MetaFunction } from '@remix-run/node';
 import { Button } from '@/components/ui/Button';
 import { Icon } from '@iconify/react';
+import { Link } from '@/components/ui/Link';
 
 export const meta: MetaFunction = () => {
   return [
@@ -11,9 +12,9 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="p-4 font-sans">
+    <section className="p-4 font-sans">
       <h1 className="text-3xl">Welcome to Remix (SPA Mode)</h1>
-      <ul className="mt-4 list-disc space-y-2 pl-6 text-green-500">
+      <ul className="mt-4 list-disc space-y-2 pl-6">
         <li className="hover:bg-purple-300">
           <a
             className="text-blue-600 underline visited:text-purple-900"
@@ -54,7 +55,16 @@ export default function Index() {
             leadingIcon={<Icon icon="solar:text-bold" />}
           />
         </li>
+        <li>
+          <Link to="/about">about</Link>
+        </li>
+        <li>
+          <Link to={`/about?slug=${Math.random()}`}>UnVisited Link</Link>
+        </li>
+        <li>
+          <Link to="/about/hogefuga">about/hogefuga</Link>
+        </li>
       </ul>
-    </div>
+    </section>
   );
 }

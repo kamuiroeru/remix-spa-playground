@@ -1,6 +1,7 @@
 import { Icon } from '@iconify/react';
-import { buttonColors, buttonTypes, Presentation } from './Presentation';
+import { buttonTypes, Presentation } from './Presentation';
 import type { Meta, StoryObj } from '@storybook/react';
+import { BASIC_COLORS } from '@/schema/color';
 
 type Story = StoryObj<typeof Presentation>;
 
@@ -18,7 +19,7 @@ export const Default: Story = {
     },
     color: {
       control: 'radio',
-      options: buttonColors,
+      options: BASIC_COLORS,
     },
   },
 };
@@ -38,7 +39,7 @@ export const WithIcon: Story = {
     },
     color: {
       control: 'radio',
-      options: buttonColors,
+      options: BASIC_COLORS,
     },
   },
 };

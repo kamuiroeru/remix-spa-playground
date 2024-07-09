@@ -1,21 +1,10 @@
 import { clsx } from 'clsx/lite';
+import type { BasicColor } from '@/schema/color';
 
 export const buttonTypes = ['normal', 'outline', 'text'] as const;
 type ButtonType = (typeof buttonTypes)[number];
 
-export const buttonColors = [
-  'red',
-  'orange',
-  'yellow',
-  'green',
-  'blue',
-  'indigo',
-  'purple',
-  'pink',
-] as const;
-type ButtonColor = (typeof buttonColors)[number];
-
-const color2TwBgClass: Record<ButtonColor, string> = {
+const color2TwBgClass: Record<BasicColor, string> = {
   red: 'bg-red-500 hover:bg-red-600 dark:bg-red-400 dark:hover:bg-red-300',
   orange:
     'bg-orange-500 hover:bg-orange-600 dark:bg-orange-400 dark:hover:bg-orange-300',
@@ -31,7 +20,7 @@ const color2TwBgClass: Record<ButtonColor, string> = {
   pink: 'bg-pink-500 hover:bg-pink-600 dark:bg-pink-400 dark:hover:bg-pink-300',
 };
 
-const color2TwBorderClass: Record<ButtonColor, string> = {
+const color2TwBorderClass: Record<BasicColor, string> = {
   red: 'border-red-500',
   orange: 'border-orange-500',
   yellow: 'border-yellow-500',
@@ -42,7 +31,7 @@ const color2TwBorderClass: Record<ButtonColor, string> = {
   pink: 'border-pink-500',
 };
 
-const color2TwTextClass: Record<ButtonColor, string> = {
+const color2TwTextClass: Record<BasicColor, string> = {
   red: 'text-red-500',
   orange: 'text-orange-500',
   yellow: 'text-yellow-500',
@@ -56,7 +45,7 @@ const color2TwTextClass: Record<ButtonColor, string> = {
 type Props = {
   text: string;
   type?: ButtonType;
-  color?: ButtonColor;
+  color?: BasicColor;
   leadingIcon?: JSX.Element;
 };
 

@@ -20,7 +20,6 @@ export const Presentation = ({ checked, onChange = (_) => {} }: Props) => {
         id={id}
         className="group/lightDarkSwitchInput absolute opacity-0"
         type="checkbox"
-        defaultChecked={checked}
         onChange={onChangeHandler}
       />
       <label
