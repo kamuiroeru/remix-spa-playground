@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react';
-import { ChangeEvent, useId } from 'react';
 import { clsx } from 'clsx/lite';
+import { ChangeEvent, useId } from 'react';
 
 // Inspired by https://codepen.io/Umer_Farooq/pen/eYJgKGN
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
   onChange?: (checked: boolean) => void;
 };
 
-export const Presentation = ({ checked, onChange = (_) => {} }: Props) => {
+export const Presentation = ({ checked, onChange = (hoge) => {} }: Props) => {
   const id = useId();
   const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.checked);

@@ -1,6 +1,6 @@
 import { useId } from 'react';
-import { BasicColor } from '@/schema/color';
 import { Switch } from '@/components/ui/Switch';
+import { BasicColor } from '@/schema/color';
 
 type Props = {
   checked: boolean;

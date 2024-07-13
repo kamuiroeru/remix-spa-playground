@@ -1,5 +1,5 @@
-import { ChangeEvent, useId } from 'react';
 import { clsx } from 'clsx/lite';
+import { ChangeEvent, useId } from 'react';
 import { BasicColor } from '@/schema/color';
 
 const color2TwBgClass: Record<BasicColor, string> = {

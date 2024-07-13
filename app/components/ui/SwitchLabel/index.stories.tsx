@@ -1,7 +1,7 @@
+import { useState } from 'react';
+import { BASIC_COLORS, type BasicColor } from '@/schema/color';
 import { Presentation } from './Presentation';
 import type { Meta, StoryObj } from '@storybook/react';
-import { BASIC_COLORS, type BasicColor } from '@/schema/color';
-import { useState } from 'react';
 
 type Props = {
   label: string;
