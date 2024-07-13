@@ -54,7 +54,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             textClassName,
           )}
         >
-          <label>Remix SPA Playground</label>
+          <p>Remix SPA Playground</p>
         </footer>
         <ScrollRestoration />
         <Scripts />

@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react';
 import { Button } from '@/components/ui/Button';
-import type { MetaFunction } from '@remix-run/node';
 import { Link } from '@/components/ui/Link';
+import type { MetaFunction } from '@remix-run/node';
 
 export const meta: MetaFunction = () => {
   return [

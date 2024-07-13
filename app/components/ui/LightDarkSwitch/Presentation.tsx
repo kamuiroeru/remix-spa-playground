@@ -8,7 +8,7 @@ type Props = {
   onChange?: (checked: boolean) => void;
 };
 
-export const Presentation = ({ checked, onChange = (hoge) => {} }: Props) => {
+export const Presentation = ({ checked, onChange = (_) => {} }: Props) => {
   const id = useId();
   const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.checked);
@@ -22,6 +22,7 @@ export const Presentation = ({ checked, onChange = (hoge) => {} }: Props) => {
         type="checkbox"
         onChange={onChangeHandler}
       />
+      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <label
         htmlFor={id}
         className="relative flex h-[26px] w-[50px] cursor-pointer items-center justify-between rounded-full bg-black p-1"
