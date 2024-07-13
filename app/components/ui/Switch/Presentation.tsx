@@ -1,5 +1,5 @@
-import { ChangeEvent, useId } from 'react';
 import { clsx } from 'clsx/lite';
+import { ChangeEvent, useId } from 'react';
 import { BasicColor } from '@/schema/color';
 
 const color2TwBgClass: Record<BasicColor, string> = {
@@ -25,8 +25,12 @@ export const Presentation = ({
   checked,
   onColor = 'blue',
   onChange = (_) => {},
-  id = useId(),
+  id,
 }: Props) => {
+  const defaultId = useId();
+  if (typeof id === 'undefined') {
+    id = defaultId;
+  }
   const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.checked);
   };
@@ -40,6 +44,8 @@ export const Presentation = ({
         defaultChecked={checked}
         onChange={onChangeHandler}
       />
+
+      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <label
         htmlFor={id}
         className={clsx(

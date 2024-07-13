@@ -6,8 +6,8 @@ import {
   ScrollRestoration,
 } from '@remix-run/react';
 import './tailwind.css';
-import { useEffect, useState } from 'react';
 import { clsx } from 'clsx/lite';
+import { useEffect, useState } from 'react';
 import { LightDarkSwitch } from '@/components/ui/LightDarkSwitch';
 import { getIsDarkMode, saveIsDarkMode } from '@/utils/darkMode';
 
@@ -54,7 +54,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             textClassName,
           )}
         >
-          <label>Remix SPA Playground</label>
+          <p>Remix SPA Playground</p>
         </footer>
         <ScrollRestoration />
         <Scripts />

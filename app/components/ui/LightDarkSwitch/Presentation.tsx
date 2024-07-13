@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react';
-import { ChangeEvent, useId } from 'react';
 import { clsx } from 'clsx/lite';
+import { ChangeEvent, useId } from 'react';
 
 // Inspired by https://codepen.io/Umer_Farooq/pen/eYJgKGN
 type Props = {
@@ -22,6 +22,7 @@ export const Presentation = ({ checked, onChange = (_) => {} }: Props) => {
         type="checkbox"
         onChange={onChangeHandler}
       />
+      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <label
         htmlFor={id}
         className="relative flex h-[26px] w-[50px] cursor-pointer items-center justify-between rounded-full bg-black p-1"

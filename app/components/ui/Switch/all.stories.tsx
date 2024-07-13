@@ -1,7 +1,7 @@
+import { useState } from 'react';
+import { BASIC_COLORS } from '@/schema/color';
 import { Presentation } from './Presentation';
 import type { Meta, StoryObj } from '@storybook/react';
-import { BASIC_COLORS } from '@/schema/color';
-import { useState } from 'react';
 
 const PresentationMock = () => {
   const [checked, setChecked] = useState(true);

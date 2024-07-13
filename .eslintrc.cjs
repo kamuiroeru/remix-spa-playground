@@ -53,7 +53,7 @@ module.exports = {
     // Typescript
     {
       files: ['**/*.{ts,tsx}'],
-      plugins: ['@typescript-eslint', 'import'],
+      plugins: ['@typescript-eslint', 'import', 'eslint-plugin-unused-imports'],
       parser: '@typescript-eslint/parser',
       settings: {
         'import/internal-regex': '^~/',
@@ -70,7 +70,42 @@ module.exports = {
         'plugin:@typescript-eslint/recommended',
         'plugin:import/recommended',
         'plugin:import/typescript',
+        'prettier',
       ],
+      rules: {
+        '@typescript-eslint/no-unused-vars': 'off',
+        'unused-imports/no-unused-imports': 'error',
+        'unused-imports/no-unused-vars': [
+          'warn',
+          {
+            vars: 'all',
+            varsIgnorePattern: '^_',
+            args: 'after-used',
+            argsIgnorePattern: '^_',
+          },
+        ],
+        'sort-imports': 0,
+        'import/order': [
+          'error',
+          {
+            groups: [
+              'builtin',
+              'external',
+              'internal',
+              ['parent', 'sibling'],
+              'object',
+              'type',
+              'index',
+            ],
+            alphabetize: {
+              order: 'asc',
+              caseInsensitive: true,
+            },
+          },
+        ],
+        // Union Type や Intersection Type などの型定義をソートする
+        '@typescript-eslint/sort-type-constituents': 'error',
+      },
     },
 
     // Node

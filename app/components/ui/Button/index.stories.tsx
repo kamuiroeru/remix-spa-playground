@@ -1,7 +1,7 @@
 import { Icon } from '@iconify/react';
+import { BASIC_COLORS } from '@/schema/color';
 import { buttonTypes, Presentation } from './Presentation';
 import type { Meta, StoryObj } from '@storybook/react';
-import { BASIC_COLORS } from '@/schema/color';
 
 type Story = StoryObj<typeof Presentation>;
 

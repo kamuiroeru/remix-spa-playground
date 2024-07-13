@@ -4,10 +4,10 @@ import type { Meta, StoryObj } from '@storybook/react';
 const PresentationMock = () => (
   <ul className="ml-4 list-disc">
     <li>
-      <Presentation to="/" children="Visited Link" />
+      <Presentation to="/">Visited Link</Presentation>
     </li>
     <li>
-      <Presentation to={`/${Math.random()}`} children="UnVisited Link" />
+      <Presentation to={`/${Math.random()}`}>UnVisited Link</Presentation>
     </li>
   </ul>
 );
