@@ -14,12 +14,28 @@ With.
 
 ## Commands
 
-```
-pnpm run dev
-pnpm run build
+#### Setup
+
+```sh
+nvm install
+nvm use
+corepack enable
 ```
 
-```
+#### Local Preview
+
+```sh
+# App
+pnpm run dev
+# Storybook
 pnpm run storybook
-pnpm run build-storybook
+```
+
+#### Build & Preview
+
+```sh
+# App
+pnpm run build && pnpm run preview
+# Storybook
+pnpm run
 ```
